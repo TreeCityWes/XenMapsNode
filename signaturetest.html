@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xenmaps.io</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://github.com/TreeCityWes/XenMaps.io/blob/main/favicon.png?raw=true"/>
+
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Xenmaps.io: Explore our project and join the community.">
+    <meta name="keywords" content="XenMaps, Cryptocurrency, Blockchain, Inscription, XenBlocks">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xenmaps.io/">
+    <meta property="og:title" content="Xenmaps.io">
+    <meta property="og:description" content="Xenmaps.io: Explore our project and join the community.">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://xenmaps.io/">
+    <meta property="twitter:title" content="Xenmaps.io">
+    <meta property="twitter:description" content="Xenmaps.io: Explore our project and join the community.">
+
+    <!-- Google Font Import -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Include web3.js -->
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.3/dist/web3.min.js"></script>
+
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden; /* Hide scrollbars */
+            background-color: black; /* Explicitly set background to black */
+            font-family: 'Roboto', sans-serif; /* Use Roboto font */
+        }
+
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #F5F5F5; /* Off-white color for text */
+            z-index: 2; /* Ensure text is above the canvas */
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .textbox {
+            background: #000000; /* Fully opaque black background */
+            border: 1px solid #F5F5F5;
+            padding: 20px;
+        }
+
+        a {
+            color: #00FF00; /* Lime green color for links */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="networkCanvas"></canvas>
+    <div class="content textbox">
+        <h1>0.xenmap</h1>
+        <p>XenMaps: The First Inscription Project on XenBlocks</p>
+        <a href="https://twitter.com/xenmaps_io" target="_blank">Twitter - </a>
+        <a href="https://hashhead.io" target="_blank">HashHead.io</a>
+
+        <!-- Input field for Ethereum address -->
+        <label for="walletAddress">Ethereum Wallet Address:</label>
+        <input type="text" id="walletAddress" placeholder="Enter your Ethereum address">
+
+        <!-- Input fields for XenMap data -->
+        <label for="blockCreatedOn">Block Created On:</label>
+        <input type="text" id="blockCreatedOn" placeholder="Enter block creation date">
+        <label for="blockType">Block Type:</label>
+        <input type="text" id="blockType" placeholder="Enter block type">
+        <label for="blockKey">Block Key:</label>
+        <input type="text" id="blockKey" placeholder="Enter block key">
+        <label for="blockHash">Block Hash:</label>
+        <input type="text" id="blockHash" placeholder="Enter block hash">
+
+        <!-- Button to trigger signature creation and XenMap minting -->
+        <button id="mintXenMapButton">Mint XenMap</button>
+
+        <!-- Output the generated signature -->
+        <div id="signatureOutput"></div>
+    </div>
+    <script src="signature.js"></script>
+</body>
+</html>
